@@ -1,26 +1,20 @@
-import { Lato } from "next/font/google";
-import "./globals.css";
-import NavBar from "@/components/navbar";
+import './globals.css';
+import NavBar from "@/components/NavBar/navbar";
+import CustomMouse from '@/components/CustomMouse';
 
-const lato = Lato({
-  weight: "900",
-  variable: "--font-lato",
-  subsets: ["latin"]
-});
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${lato.variable} antialiased`}
-      >
-        <NavBar />
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" className=''>
+            <body>
+                <CustomMouse />
+                <NavBar />
+                {children}
+            </body>
+        </html>
+    );
 }
